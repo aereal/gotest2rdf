@@ -1,0 +1,32 @@
+{"Time":"2024-05-25T12:41:36.398586093+09:00","Action":"start","Package":"github.com/aereal/reviewdog-go-test"}
+{"Time":"2024-05-25T12:41:36.398743396+09:00","Action":"start","Package":"github.com/aereal/reviewdog-go-test/cmd/gotest2rdjsonl"}
+{"Time":"2024-05-25T12:41:36.398779764+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test/cmd/gotest2rdjsonl","Output":"?   \tgithub.com/aereal/reviewdog-go-test/cmd/gotest2rdjsonl\t[no test files]\n"}
+{"Time":"2024-05-25T12:41:36.39879377+09:00","Action":"skip","Package":"github.com/aereal/reviewdog-go-test/cmd/gotest2rdjsonl","Elapsed":0}
+{"Time":"2024-05-25T12:41:36.3995126+09:00","Action":"run","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ok"}
+{"Time":"2024-05-25T12:41:36.399531214+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ok","Output":"=== RUN   Test_ok\n"}
+{"Time":"2024-05-25T12:41:36.399552955+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ok","Output":"    test_test.go:6: ok\n"}
+{"Time":"2024-05-25T12:41:36.399558896+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ok","Output":"--- PASS: Test_ok (0.00s)\n"}
+{"Time":"2024-05-25T12:41:36.399561952+09:00","Action":"pass","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ok","Elapsed":0}
+{"Time":"2024-05-25T12:41:36.399564787+09:00","Action":"run","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ng"}
+{"Time":"2024-05-25T12:41:36.399567101+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ng","Output":"=== RUN   Test_ng\n"}
+{"Time":"2024-05-25T12:41:36.399569516+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ng","Output":"    test_test.go:10: failing\n"}
+{"Time":"2024-05-25T12:41:36.399572291+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ng","Output":"--- FAIL: Test_ng (0.00s)\n"}
+{"Time":"2024-05-25T12:41:36.399575687+09:00","Action":"fail","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ng","Elapsed":0}
+{"Time":"2024-05-25T12:41:36.399578853+09:00","Action":"run","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ng_multiline"}
+{"Time":"2024-05-25T12:41:36.399581137+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ng_multiline","Output":"=== RUN   Test_ng_multiline\n"}
+{"Time":"2024-05-25T12:41:36.399583832+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ng_multiline","Output":"    test_test.go:14: failing line1\n"}
+{"Time":"2024-05-25T12:41:36.399586137+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ng_multiline","Output":"        line2\n"}
+{"Time":"2024-05-25T12:41:36.399589383+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ng_multiline","Output":"--- FAIL: Test_ng_multiline (0.00s)\n"}
+{"Time":"2024-05-25T12:41:36.399592519+09:00","Action":"fail","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_ng_multiline","Elapsed":0}
+{"Time":"2024-05-25T12:41:36.399595033+09:00","Action":"run","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_skipnow"}
+{"Time":"2024-05-25T12:41:36.399597137+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_skipnow","Output":"=== RUN   Test_skipnow\n"}
+{"Time":"2024-05-25T12:41:36.399601716+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_skipnow","Output":"--- SKIP: Test_skipnow (0.00s)\n"}
+{"Time":"2024-05-25T12:41:36.399626292+09:00","Action":"skip","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_skipnow","Elapsed":0}
+{"Time":"2024-05-25T12:41:36.399631922+09:00","Action":"run","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_skip"}
+{"Time":"2024-05-25T12:41:36.399634397+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_skip","Output":"=== RUN   Test_skip\n"}
+{"Time":"2024-05-25T12:41:36.399637753+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_skip","Output":"    test_test.go:22: skipped\n"}
+{"Time":"2024-05-25T12:41:36.399644636+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_skip","Output":"--- SKIP: Test_skip (0.00s)\n"}
+{"Time":"2024-05-25T12:41:36.399648753+09:00","Action":"skip","Package":"github.com/aereal/reviewdog-go-test","Test":"Test_skip","Elapsed":0}
+{"Time":"2024-05-25T12:41:36.399651729+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Output":"FAIL\n"}
+{"Time":"2024-05-25T12:41:36.399801538+09:00","Action":"output","Package":"github.com/aereal/reviewdog-go-test","Output":"FAIL\tgithub.com/aereal/reviewdog-go-test\t0.001s\n"}
+{"Time":"2024-05-25T12:41:36.399825603+09:00","Action":"fail","Package":"github.com/aereal/reviewdog-go-test","Elapsed":0.001}
