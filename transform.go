@@ -46,39 +46,23 @@ func Transform(input io.Reader, output io.Writer, opts ...Option) error {
 				outputs = outputs[1:]
 			}
 		case "fail":
-			diag := RDFDiagnostic{Severity: RDFSeverityError}
-			msg := new(strings.Builder)
-			for _, oe := range outputs {
-				msg.Grow(len(oe.Output))
-				msg.WriteString(oe.Output)
-				if loc, ok := extractLocationFromOutput(oe.Output); ok {
-					diag.Location = loc
-				}
-			}
-			if diag.Location == nil {
+			msg, loc := accum(outputs)
+			if loc == nil {
 				slog.Warn("parsed test event but the corresponding location is not found")
 				continue
 			}
-			diag.Message = msg.String()
+			diag := RDFDiagnostic{Severity: RDFSeverityError, Location: loc, Message: msg}
 			if err := enc.Encode(diag); err != nil {
 				return err
 			}
 			outputs = outputs[:]
 		case "skip":
-			diag := RDFDiagnostic{Severity: RDFSeverityInfo}
-			msg := new(strings.Builder)
-			for _, oe := range outputs {
-				msg.Grow(len(oe.Output))
-				msg.WriteString(oe.Output)
-				if loc, ok := extractLocationFromOutput(oe.Output); ok {
-					diag.Location = loc
-				}
-			}
-			if diag.Location == nil {
+			msg, loc := accum(outputs)
+			if loc == nil {
 				slog.Warn("parsed test event but the corresponding location is not found")
 				continue
 			}
-			diag.Message = msg.String()
+			diag := RDFDiagnostic{Severity: RDFSeverityInfo, Location: loc, Message: msg}
 			if err := enc.Encode(diag); err != nil {
 				return err
 			}
@@ -90,6 +74,20 @@ func Transform(input io.Reader, output io.Writer, opts ...Option) error {
 		}
 	}
 	return nil
+}
+
+func accum(outputs []TestEvent) (string, *RDFLocation) {
+	msg := new(strings.Builder)
+	var loc *RDFLocation
+	var foundLoc bool
+	for _, oe := range outputs {
+		msg.Grow(len(oe.Output))
+		msg.WriteString(oe.Output)
+		if !foundLoc {
+			loc, foundLoc = extractLocationFromOutput(oe.Output)
+		}
+	}
+	return msg.String(), loc
 }
 
 func extractLocationFromOutput(s string) (*RDFLocation, bool) {
